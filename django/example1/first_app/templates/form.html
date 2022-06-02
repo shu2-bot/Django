@@ -1,0 +1,9 @@
+{% extends 'base.html' %}
+{% block content %}
+<h2>新規記事</h2>
+<form method = 'POST'>
+    {% csrf_token %}   <!--セキュリティのため必ず記述-->
+    {{form.as_p}}   <!--タイトルと本文のフォームを表示-->
+    <button type = 'submit'>投稿</button>
+</form>
+{% endblock %}

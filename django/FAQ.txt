@@ -1,0 +1,20 @@
+[django]
+
+エラー : no such table: django_session
+manage.py と同じ階層で python manage.py migrate を実行する
+
+<djangoプロフェッショナルwebプログラミング>
+
+htmlファイルを読み込ませるために
+・setting.py のinstalled_apps にアプリ名(first_appなど)の追加の必要
+・urls.py のpath にurlの最後に'/'を忘れないこと
+・アプリ名のディレクトリ内にtemplatesフォルダを作成し、そこにhtmlファイルを作成する
+
+p126の下記のコードを無くすと正常に動く
+<!--<small>{{article.created_at | data : 'Y年n月j日'}}</small>-->
+
+
+
+ORM(object-relational-mapping)
+普通DBを操作する時はSQLなどが必要になるが、今回のようにコードを書くだけでDBを操作できる
+このDBとdjangoを繋ぐ仕組みをORMという

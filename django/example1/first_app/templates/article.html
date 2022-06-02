@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+{% block title %}{{article.title}}{% endblock %}
+{% block content %}
+<article>
+    <h2>{{article.title}}</h2>
+    <small>{{article.created_at}}</small>
+    {{article.content | linebreaks}}
+    <hr>
+    {% for comment in article.comments.all %}
+    <div class = 'comment'>
+        {{comment.content | linebreaks}}
+    </div>
+    <hr>
+    {% empty %}
+    <div class = 'comment'>
+        <p>コメントがありません</p>
+    </div>
+    {% endfor %}
+    <p><a href = "/">トップページ</a></p>
+</article>
+{% endblock %}
